@@ -12,11 +12,11 @@ let Spotify = {
 		if (accessToken) {
 			return accessToken;
 		} else {
-			accessTokenMatch = windows.location.href.match(/access_token=([^&]*)/);
-			expiresInMatch = windows.location.href.match(/expires_in=([^&]*)/);		
+			accessTokenMatch = window.location.href.match(/access_token=([^&]*)/);
+			expiresInMatch = window.location.href.match(/expires_in=([^&]*)/);		
 			if (accessTokenMatch && expiresInMatch) {
 				const expiresIn = Number(expiresInMatch[1]);
-				const accessToken = Number(accessTokenMatch[1]);
+				accessToken = Number(accessTokenMatch[1]);
 				window.setTimeout(() => accessToken = '', expiresIn * 1000);
 				window.history.pushState('Access Token', null, '/'); 
 				return accessToken;
@@ -36,7 +36,7 @@ let Spotify = {
 		}).then(jsonResponse => {
 			if (!jsonResponse.tracks) {
 				return [];
-			} else (jsonResponse.tracks) {
+			} else {
 				 return jsonResponse.tracks.items.map(track => ({
 				  id: track.id,
 				  name: track.name,
@@ -52,7 +52,7 @@ let Spotify = {
 		if (!playListName || !uris) {
 			return;
 		}
-		const accessToken = Spotify.getAccessToken();
+		accessToken = Spotify.getAccessToken();
 		let userID;
 		let header = {
 				  Authorization: `Bearer ${accessToken}`
@@ -77,7 +77,7 @@ let Spotify = {
 								}) 
 						})// second		  
 				});// first jsonResoponse			
-			}
+			
 	  }//	savelist
-};
+};// spotify
 export default Spotify;

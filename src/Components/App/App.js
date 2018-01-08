@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import SearchBar from '../../SearchBar/SearchBar';
-import SearchResults from '../../SearchResults/SearchResults';
-import Playlist from './../Playlist/Playlist';
-import Spotify from '../../../util/Spotify/Spotify';
+import SearchBar from '../SearchBar/SearchBar';
+import SearchResults from '../SearchResults/SearchResults';
+import Playlist from '../Playlist/Playlist';
+import Spotify from '../../util/Spotify/Spotify';
 class App extends Component {
   
   constructor(props) {
