@@ -16,7 +16,6 @@ class App extends Component {
 		  playlistTracks: []
 		};
 
-	  // step 42
 	  this.addTrack = this.addTrack.bind(this);
 	  this.removeTrack = this.removeTrack.bind(this);
 	  this.updatePlaylistName = this.updatePlaylistName.bind(this);
@@ -35,8 +34,8 @@ class App extends Component {
                  track
 			]
          });
-    }// if
-  }// addTrack
+    }
+  }
 		
 	removeTrack(track){
 		let id = track.id;
@@ -75,7 +74,6 @@ class App extends Component {
 		  <div className="App">
 			<SearchBar onSearch = {this.search} />
 			<div className="App-playlist">
-			// step 42
 			  <SearchResults searchResults = {this.state.searchResults} onAdd = {this.addTrack} />
 			  <Playlist playlistName = {this.state.playlistName} playlistTracks = {this.state.playlistTracks} onNameChage = {this.state.updatePlaylistName}/>
 			</div>
