@@ -49,7 +49,7 @@ let Spotify = {
 	},
 
 	savePlaylist (playListName, uris) {
-		if (!playListName || !uris) {
+		if (!playListName || !uris.length) {
 			return;
 		}
 		accessToken = Spotify.getAccessToken();

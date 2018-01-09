@@ -5,8 +5,7 @@ class Playlist extends React.Component {
   
   
   constructor(props) {
-	  super(props);
-	  
+	  super(props);	  
 	  this.handleNameChange = this.handleNameChange.bind(this);
   }
   
