@@ -71,11 +71,11 @@ let Spotify = {
 							return fetch(`https://api.spotify.com/v1/users/${userID}/playlists/${playlistId}/tracks` ,{
 								headers: headers,
 								method: 'POST',
-								body: JSON.stringify({name: playListName})
+								body: JSON.stringify({uris: uris})
 								})
-						})// second		  
-				});// first jsonResoponse			
+						})	  
+				});		
 			
-	  }//	savelist
-};// spotify
+	  }
+};
 export default Spotify;
