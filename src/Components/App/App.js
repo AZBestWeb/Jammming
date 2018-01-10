@@ -28,12 +28,9 @@ class App extends Component {
         return playlistTrack.id === track.id
     });
     if(!contains) {
-        this.setState(prevState => {
-            return [
-                 ...prevState.playlistTracks,
-                 track
-			]
-         });
+        let tracks = this.state.playlistTracks;
+		tracks.push(track);
+		this.setState({playlistTracks: tracks});
     }
   }
 		
