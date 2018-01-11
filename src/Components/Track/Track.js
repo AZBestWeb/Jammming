@@ -16,11 +16,11 @@ class Track extends React.Component {
 	  }
   }
 	
-  addTrack(props) {
+  addTrack() {
 	  this.props.onAdd(this.props.track);
   }
   
-  removeTrack(props) {
+  removeTrack() {
 	this.props.onRemove(this.props.track);  
   }
   
