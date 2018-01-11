@@ -24,13 +24,16 @@ class App extends Component {
   }
 
   addTrack(track) {
-    const contains = this.state.playlistTracks.includes(playlistTrack => {
+    const contains = this.state.playlistTracks.find(playlistTrack => {
         return playlistTrack.id === track.id
     });
     if(!contains) {
-        let tracks = this.state.playlistTracks;
+      /*  let tracks = this.state.playlistTracks;
 		tracks.push(track);
-		this.setState({playlistTracks: tracks});
+		this.setState({playlistTracks: tracks});*/
+		
+		let updatedPlaylistTracks = this.state.playlistTracks.concat(track);
+		this.setState({playlistTracks: updatedPlaylistTracks});
     }
   }
 		
@@ -71,7 +74,8 @@ class App extends Component {
 			<SearchBar onSearch = {this.search} />
 			<div className="App-playlist">
 			  <SearchResults searchResults = {this.state.searchResults} onAdd = {this.addTrack} />
-			  <Playlist playlistName = {this.state.playlistName} playlistTracks = {this.state.playlistTracks} onNameChage = {this.state.updatePlaylistName} onRemove = {this.removeTrack} onSave = {this.savePlaylist}/>
+			  <Playlist playlistName = {this.state.playlistName} playlistTracks = {this.state.playlistTracks} 
+			  onNameChange = {this.updatePlaylistName} onRemove = {this.removeTrack} onSave = {this.savePlaylist}/>
 			</div>
 		  </div>
 	  </div>
