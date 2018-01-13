@@ -34,9 +34,7 @@ renderAction() {
 	  {this.renderAction()}
 	</div>
     );
-  }
-  
-  
+  } 
 }
 
 export default Track;

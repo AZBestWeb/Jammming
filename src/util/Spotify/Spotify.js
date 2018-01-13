@@ -1,13 +1,11 @@
-
 let accessToken;
 let accessTokenMatch;
 let expiresInMatch;
-
 const cliendID = "b74456e111a340f4b1d8f3974276bf7f";
 const redirectURL = "http://localhost:3000/";
 
-let Spotify = {
-	
+let Spotify = {	
+
 	getAccessToken () {		
 		if (accessToken) {
 			return accessToken;
@@ -56,8 +54,7 @@ let Spotify = {
 		let userID;
 		let headers = {
 				  Authorization: `Bearer ${accessToken}`
-				  };
-		
+				  };		
 		return fetch('https://api.spotify.com/v1/me', {
 			headers: headers
 			}).then(response => response.json()).then(jsonResponse => {
@@ -74,8 +71,7 @@ let Spotify = {
 								body: JSON.stringify({uris: uris})
 								})
 						})	  
-				});		
-			
+				});					
 	  }
 };
 export default Spotify;
